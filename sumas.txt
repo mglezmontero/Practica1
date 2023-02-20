@@ -1,0 +1,38 @@
+
+
+GET http://malamen.dit.upm.es/calc HTTP/1.1
+Host: malamen.dit.upm.es
+Content-Type: application/x-www-form-urlencoded
+
+/////////////////////////////////
+const Http = new XMLHttpRequest();
+const url = 'http://malamen.dit.upm.es/calc';
+Http.send(body);
+
+bodyn1=3&n2=4&op=%2B
+
+Http.onreadystatechange=(e)=>{
+    console.log(Http.responseText)
+}
+
+
+///////BIEN////
+GET /calc HTTP/1.1
+Host: malamen.dit.upm.es
+Accept: text/html,text/text,application/json
+
+{"n1": 3, "n2": 4, "op": "%2B"}
+//////////
+
+
+
+///////BIEN////
+POST /calc HTTP/1.1
+Host: malamen.dit.upm.es
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Content-Length: length of body
+Connection: keep-alive
+
+n1=3&n2=4&op=%2B
+//////////
